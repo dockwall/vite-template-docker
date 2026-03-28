@@ -8,10 +8,4 @@ describe("App", () => {
     const headingElement = screen.getByText(/Vite \+ React/i);
     expect(headingElement).toBeInTheDocument();
   });
-
-  it("renders Vite + React heading", () => {
-    render(<App />);
-    const headingElement = screen.getByText(/Vite \+ React/i);
-    expect(headingElement).toBeInTheDocument();
-  });
 });
