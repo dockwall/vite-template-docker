@@ -28,7 +28,7 @@ jobs:
           source: "deploy.zip"
           target: ${{ secrets.VPS_APP_PATH }}
 
-      - name: Deploy to VPS
+      - name: Build project image and run a container
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_DOMAIN }}
@@ -37,4 +37,5 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           script: |
             cd ${{ secrets.VPS_APP_PATH }}
-            ls
+            unzip -o deploy.zip
+            rm deploy.zip
