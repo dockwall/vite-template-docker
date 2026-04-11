@@ -39,7 +39,7 @@ jobs:
             cd ${{ secrets.VPS_APP_PATH }}
             unzip -o deploy.zip
             rm deploy.zip
-            echo "${{ secrets.VPS_USERNAME_PASSWORD }}" 
+            echo "${{ secrets.VPS_USERNAME_PASSWORD }}" |
             sudo -S docker stop ${{secrets.VPS_CONTAINER_NAME}}
             sudo docker rm ${{secrets.VPS_CONTAINER_NAME}}
             sudo docker rmi ${{secrets.VPS_IMAGE_NAME}}
