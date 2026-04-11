@@ -43,4 +43,4 @@ jobs:
             sudo docker rm ${{secrets.VPS_CONTAINER_NAME}}
             sudo docker rmi ${{secrets.VPS_IMAGE_NAME}}
             sudo docker build -t ${{secrets.VPS_IMAGE_NAME}} .
-            sudo docker run -p 127.0.0.1:${{ secrets.VPS_APP_PORT }}:80 --name ${{secrets.VPS_CONTAINER_NAME}} ${{secrets.VPS_IMAGE_NAME}}:latest
+            sudo docker run -d -p 127.0.0.1:${{ secrets.VPS_APP_PORT }}:80 --name ${{secrets.VPS_CONTAINER_NAME}} ${{secrets.VPS_IMAGE_NAME}}:latest
